@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.loginController">
+     <stylesheets>
+        <URL value="@city.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="899.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/vlogger.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Label fx:id="alertsignup" layoutX="20.0" layoutY="20.0">
+         <font>
+            <Font name="Comfortaa Light" size="13.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="550.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #101745; -fx-background-radius: 0;">
+         <children>
+            <Label layoutX="80.0" layoutY="40.0" prefHeight="46.0" text="SimCity LiveIt!" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="50.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/fuy.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="signupbutton" layoutX="126.0" layoutY="420.0" mnemonicParsing="false" onAction="#SignUpOnClick" prefHeight="40.0" prefWidth="99.0" style="-fx-background-color: #384073; -fx-background-radius: 0; -fx-border-style: none;" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa SemiBold" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="nidfield" layoutX="75.0" layoutY="125.0" prefHeight="30.0" prefWidth="200.0" promptText="NID" style="-fx-background-color: #101745; -fx-border-color: transparent transparent white transparent;">
+               <font>
+                  <Font name="Comfortaa Light" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="namefield" layoutX="75.0" layoutY="180.0" prefHeight="30.0" prefWidth="200.0" promptText="name" style="-fx-background-color: #101745; -fx-border-color: transparent transparent white transparent;">
+               <font>
+                  <Font name="Comfortaa Light" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="usernamefield" layoutX="75.0" layoutY="235.0" prefHeight="30.0" prefWidth="200.0" promptText="username" style="-fx-background-color: #101745; -fx-border-color: transparent transparent white transparent;">
+               <font>
+                  <Font name="Comfortaa Light" size="13.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordfield" layoutX="75.0" layoutY="290.0" prefHeight="30.0" prefWidth="200.0" promptText="password" style="-fx-background-color: #101745; -fx-border-color: transparent transparent white transparent;">
+               <font>
+                  <Font name="Comfortaa Light" size="13.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="mobilefield" layoutX="75.0" layoutY="345.0" prefHeight="30.0" prefWidth="200.0" promptText="mobile no." style="-fx-background-color: #101745; -fx-border-color: transparent transparent white transparent;">
+               <font>
+                  <Font name="Comfortaa Light" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="173.0" layoutY="481.0" text="or," textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Light" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="54.0" layoutX="125.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/fb.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="194.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/gg.png" />
+               </image>
+            </ImageView>
+        </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
