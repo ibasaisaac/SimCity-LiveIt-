@@ -75,17 +75,17 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="383.0" layoutY="278.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="223.0" style="-fx-background-color: #000000a1; -fx-border-color: #ffffff; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-width: 3;" text="List a Vacation Rental" textFill="WHITE">
+            <Button layoutX="383.0" layoutY="278.0" mnemonicParsing="false" onMousePressed="#hotelButtonClicked" prefHeight="53.0" prefWidth="223.0" style="-fx-background-color: #000000a1; -fx-border-color: #ffffff; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-width: 3;" text="List a Vacation Rental" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="681.0" layoutY="279.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="223.0" style="-fx-background-color: #000000a1; -fx-border-color: #ffffff; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-width: 3;" text="List a Flat Rent" textFill="WHITE">
+            <Button layoutX="681.0" layoutY="279.0" mnemonicParsing="false" onMousePressed="#hotelButtonClicked" prefHeight="53.0" prefWidth="223.0" style="-fx-background-color: #000000a1; -fx-border-color: #ffffff; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-width: 3;" text="List a Flat Rent" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="980.0" layoutY="278.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="223.0" style="-fx-background-color: #000000a1; -fx-border-color: #ffffff; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-width: 3;" text="List a Job" textFill="WHITE">
+            <Button layoutX="980.0" layoutY="278.0" mnemonicParsing="false" onMousePressed="#hotelButtonClicked" prefHeight="53.0" prefWidth="223.0" style="-fx-background-color: #000000a1; -fx-border-color: #ffffff; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-width: 3;" text="List a Job" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
