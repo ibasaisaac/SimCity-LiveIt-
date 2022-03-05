@@ -6,15 +6,51 @@ import java.sql.ResultSet;
 
 public class User {
 
+    public static long LOGINTOGGLE = 0;
     private long nid;
     private String username;
     private String password;
-    public String name;
+    private String name;
     private long mobile;
+
+    public User() {
+    }
 
     public User(String a, String b) {
         this.username = a;
         this.password = b;
+    }
+
+    public Long getNID() {
+        return this.nid;
+    }
+    
+    public String getname() {
+        return this.name;
+    }
+
+    public User getUser(long id) {
+        try {
+            dbmsconnection dbmsconnect = new dbmsconnection("jdbc:mysql://localhost:3306/simcity", "root", "");
+            Connection con = dbmsconnect.getConnection();
+            String sql = "select * from user where nid=?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                this.nid = rs.getLong(1);
+                this.name = rs.getString(2);
+                this.username = rs.getString(3);
+                this.password = rs.getString(4);
+                this.mobile = rs.getLong(5);
+            }
+            dbmsconnect.closeConnection(con, stmt);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return this;
     }
 
     public boolean login() {
@@ -36,8 +72,7 @@ public class User {
                 flag = true;
             }
             dbmsconnect.closeConnection(con, stmt);
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return flag;
@@ -65,8 +100,7 @@ public class User {
                 flag = true;
             }
             dbmsconnect.closeConnection(con, stmt);
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return flag;
