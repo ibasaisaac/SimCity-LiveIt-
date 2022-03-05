@@ -48,11 +48,9 @@ public class EarnController {
     @FXML
     private Label earnbutton;
 
-    
     public void initialize(URL url, ResourceBundle rb) {
-        }
+    }
 
-  
     @FXML
     private void hamburgerIsPressed(MouseEvent event) {
         try {
@@ -74,11 +72,13 @@ public class EarnController {
 
     @FXML
     private void hotelIsClicked(ActionEvent event) throws IOException {
-        Stage loginwindow = new Stage();
-        loginwindow.initModality(Modality.APPLICATION_MODAL);
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
-        loginwindow.setScene(scene);
-        loginwindow.show();
+        if (User.LOGINTOGGLE == 0) {
+            Stage loginwindow = new Stage();
+            loginwindow.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+            loginwindow.setScene(scene);
+            loginwindow.show();
+        }
     }
 
     @FXML

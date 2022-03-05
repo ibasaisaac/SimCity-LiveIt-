@@ -69,11 +69,13 @@ public class loginController implements Initializable {
 
     @FXML
     private void loginbuttonIsPressed(MouseEvent event) throws IOException {
-        Stage loginwindow = new Stage();
-        loginwindow.initModality(Modality.APPLICATION_MODAL);
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
-        loginwindow.setScene(scene);
-        loginwindow.show();
+        if (User.LOGINTOGGLE == 0) {
+            Stage loginwindow = new Stage();
+            loginwindow.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+            loginwindow.setScene(scene);
+            loginwindow.show();
+        }
     }
 
     @FXML
@@ -100,10 +102,9 @@ public class loginController implements Initializable {
             fade.setOnFinished(e -> {
                 alertlogin.setText(null);
                 User.LOGINTOGGLE = u.getNID();
-                loginbutton.setText(u.getname());
                 Stage stage = (Stage) signinbutton.getScene().getWindow();
                 stage.close();
-                
+
             });
             fade.play();
         } else {
