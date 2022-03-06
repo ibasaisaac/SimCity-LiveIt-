@@ -48,6 +48,8 @@ public class EarnController {
     @FXML
     private Label earnbutton;
 
+    int service = 0;
+
     public void initialize(URL url, ResourceBundle rb) {
     }
 
@@ -71,7 +73,53 @@ public class EarnController {
     }
 
     @FXML
-    private void hotelIsClicked(ActionEvent event) throws IOException {
+    public boolean hotelIsClicked(ActionEvent event) throws IOException {
+        service = 1;
+        if (User.LOGINTOGGLE == 0) {
+            Stage loginwindow = new Stage();
+            loginwindow.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+            loginwindow.setScene(scene);
+            loginwindow.show();
+//            loginController lc = new loginController();
+//            if (lc.SigninOnClick(event)) {
+//                System.out.println("k");
+//                User u = new User();
+//                u.getUser(User.LOGINTOGGLE);
+//                Stage stage = (Stage) hotelButton.getScene().getWindow();
+//                Scene newscene = new Scene(FXMLLoader.load(getClass().getResource("detailsAccom.fxml")));
+//                stage.setScene(newscene);
+//                stage.show();
+//            }
+            
+        } else if (User.LOGINTOGGLE > 0) {
+            User u = new User();
+            u.getUser(User.LOGINTOGGLE);
+            Stage stage = (Stage) hotelButton.getScene().getWindow();
+            Scene newscene = new Scene(FXMLLoader.load(getClass().getResource("detailsAccom.fxml")));
+            stage.setScene(newscene);
+            stage.show();
+        }
+    
+    return true;}
+
+    @FXML
+    public void check() throws IOException {
+        try{
+        System.out.println("k");
+//        EarnController ec = new EarnController();
+//        if (service==1) {
+            Stage stage = (Stage) hotelButton.getScene().getWindow();
+            Scene newscene = new Scene(FXMLLoader.load(getClass().getResource("detailsAccom.fxml")));
+            stage.setScene(newscene);
+            stage.show();
+        }
+        catch(IOException ex) {
+            ex.printStackTrace();
+}
+    }
+    @FXML
+    private void rentalIsClicked(ActionEvent event) throws IOException {
         if (User.LOGINTOGGLE == 0) {
             Stage loginwindow = new Stage();
             loginwindow.initModality(Modality.APPLICATION_MODAL);
@@ -82,18 +130,25 @@ public class EarnController {
     }
 
     @FXML
-    private void rentalIsClicked(ActionEvent event
-    ) {
+    private void flatIsClicked(ActionEvent event) throws IOException {
+        if (User.LOGINTOGGLE == 0) {
+            Stage loginwindow = new Stage();
+            loginwindow.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+            loginwindow.setScene(scene);
+            loginwindow.show();
+        }
     }
 
     @FXML
-    private void flatIsClicked(ActionEvent event
-    ) {
-    }
-
-    @FXML
-    private void jobIsClicked(ActionEvent event
-    ) {
+    private void jobIsClicked(ActionEvent event) throws IOException {
+        if (User.LOGINTOGGLE == 0) {
+            Stage loginwindow = new Stage();
+            loginwindow.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+            loginwindow.setScene(scene);
+            loginwindow.show();
+        }
     }
 
     @FXML
