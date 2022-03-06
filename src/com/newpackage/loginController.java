@@ -1,10 +1,9 @@
 package com.newpackage;
 
-import com.jfoenix.controls.JFXButton;
-import javafx.scene.control.Button;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.util.Duration;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -12,19 +11,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-/**
- * FXML Controller class
- *
- * @author Tasnim
- */
 public class loginController implements Initializable {
+
+    @FXML
+    private Button loginbutton;
+    @FXML
+    private Button exitbutton;
 
     @FXML
     private Label alertlogin;
@@ -52,16 +53,33 @@ public class loginController implements Initializable {
     @FXML
     private Button signupbutton;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if (User.LOGINTOGGLE > 0) {
+            User u = new User();
+            u.getUser(User.LOGINTOGGLE);
+            loginbutton.setText(u.getname());
+        }
     }
 
     @FXML
-    private void registerIsClicked(ActionEvent event) throws IOException {
+    private void ExitOnClick(ActionEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    private void loginbuttonIsPressed(MouseEvent event) throws IOException {
+        if (User.LOGINTOGGLE == 0) {
+            Stage loginwindow = new Stage();
+            loginwindow.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
+            loginwindow.setScene(scene);
+            loginwindow.show();
+        }
+    }
+
+    @FXML
+    public void registerIsClicked(ActionEvent event) throws IOException {
         Stage stage = (Stage) registerbutton.getScene().getWindow();
         Scene signupScene = new Scene(FXMLLoader.load(getClass().getResource("signup.fxml")));
         stage.setScene(signupScene);
@@ -69,10 +87,9 @@ public class loginController implements Initializable {
     }
 
     @FXML
-    private void SigninOnClick(ActionEvent event) {
+    public void SigninOnClick(ActionEvent event) {
         String username = usernameloginfield.getText();
         String password = passwordloginfield.getText();
-
         User u = new User(username, password);
         boolean flag = u.login();
 
@@ -84,9 +101,10 @@ public class loginController implements Initializable {
             fade.setCycleCount(1);
             fade.setOnFinished(e -> {
                 alertlogin.setText(null);
-                System.out.println(u.name);
+                User.LOGINTOGGLE = u.getNID();
                 Stage stage = (Stage) signinbutton.getScene().getWindow();
                 stage.close();
+
             });
             fade.play();
         } else {
@@ -101,7 +119,7 @@ public class loginController implements Initializable {
     }
 
     @FXML
-    private void SignUpOnClick(ActionEvent event) {
+    public void SignUpOnClick(ActionEvent event) {
         int f = 0;
 
         String t = nidfield.getText();
@@ -144,6 +162,7 @@ public class loginController implements Initializable {
                 fade.setCycleCount(1);
                 fade.setOnFinished(e -> {
                     alertsignup.setText(null);
+                    User.LOGINTOGGLE = u.getNID();
                     Stage stage = (Stage) signupbutton.getScene().getWindow();
                     stage.close();
                 });

@@ -4,44 +4,29 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import java.io.IOException;
 import java.net.URL;
-import javafx.util.Duration;
-import java.util.ResourceBundle;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-
-
-import java.io.IOException;
-import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.Event;
+import javafx.util.Duration;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author Tasnim
- */
 public class home1Controller implements Initializable {
 
+    @FXML
+    private Group logo;
     @FXML
     private ImageView homebg;
     int count = 0;
@@ -50,25 +35,23 @@ public class home1Controller implements Initializable {
     @FXML
     private JFXDrawer hamburgerdrawer;
     @FXML
-    private Label accomodation;
+    private Label accomodationbutton;
     @FXML
     private JFXDrawer accomodationdrawer;
     @FXML
-    private Label earn;
+    private Label jobbutton;
     @FXML
-    private Button earnButton;
+    private Label librarybutton;
     @FXML
-    private AnchorPane anchorpane;
+    private Label thingsbutton;
+    @FXML
+    private Label covidbutton;
+    @FXML
+    private Label earnbutton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         slideshow();
-         if (hamburgerdrawer.isClosed()) 
-        {
-            //hamburgerdrawer.setVisible(true);
-            hamburgerdrawer.setDisable(true);
-            hamburgerdrawer.setVisible(true);
-        }
     }
 
     public void slideshow() {
@@ -85,31 +68,27 @@ public class home1Controller implements Initializable {
                 count = 0;
             }
         }));
+
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
 
-//    @FXML
-//    hamburgerdrawer.setVisible(false);
     @FXML
     private void hamburgerIsPressed(MouseEvent event) {
         try {
-            //hamburgerdrawer.setVisible(false);
             VBox vbox = FXMLLoader.load(getClass().getResource("hamburger.fxml"));
             hamburgerdrawer.setSidePane(vbox);
         } catch (IOException ex) {
             Logger.getLogger(home1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        if (hamburgerdrawer.isOpened()) 
-        {
+        if (hamburgerdrawer.isOpened()) {
             hamburgerdrawer.close();
-            hamburgerdrawer.setDisable(true);
-        }
-        else {
+            covidbutton.setVisible(true);
+            earnbutton.setVisible(true);
+        } else {
             hamburgerdrawer.open();
-            hamburgerdrawer.setVisible(true);
-            hamburgerdrawer.setDisable(false);
+            covidbutton.setVisible(false);
+            earnbutton.setVisible(false);
         }
     }
 
@@ -122,27 +101,45 @@ public class home1Controller implements Initializable {
             Logger.getLogger(home1Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (accomodationdrawer.isOpened()) {
-           accomodationdrawer.close();
+            accomodationdrawer.close();
         } else {
             accomodationdrawer.open();
         }
     }
-    
-    ///ib
-    
+
+    @FXML
+    private void jobIsPressed(MouseEvent event) {
+    }
+
+    @FXML
+    private void libraryIsPressed(MouseEvent event) {
+    }
+
+    @FXML
+    private void thingsIsPressed(MouseEvent event) {
+    }
+
     @FXML
     private void earnIsPressed(MouseEvent event) throws IOException {
-   
-        hamburgerdrawer.setVisible(false);
-        Parent root;
-        root =FXMLLoader.load(getClass().getResource("earn.fxml"));
         Stage stage;
-        stage=(Stage)earnButton.getScene().getWindow(); 
+        stage = (Stage) logo.getScene().getWindow();
         Scene scene;
-        scene=new Scene(root);
+        scene = new Scene(FXMLLoader.load(getClass().getResource("earn.fxml")));
         stage.setScene(scene);
         stage.show();
     }
 
-    
+    @FXML
+    private void covidIsPressed(MouseEvent event) {
+    }
+
+    @FXML
+    private void logoIsPressed(MouseEvent event) throws IOException {
+        Stage stage;
+        stage = (Stage) logo.getScene().getWindow();
+        Scene scene;
+        scene = new Scene(FXMLLoader.load(getClass().getResource("home1.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
 }
