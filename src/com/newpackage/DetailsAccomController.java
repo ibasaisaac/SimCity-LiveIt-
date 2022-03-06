@@ -1,4 +1,3 @@
-
 /**
  * FXML Controller class
  *
@@ -110,6 +109,12 @@ public class DetailsAccomController implements Initializable{
 
     @FXML
     private TextField website;
+    
+    @FXML
+    private ImageView backbutton;
+    
+    @FXML
+    private Group logo;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -125,9 +130,35 @@ public class DetailsAccomController implements Initializable{
     void earnIsPressed(MouseEvent event) {
 
     }
+    
+    @FXML
+    private void backIsPressed(MouseEvent event) throws IOException {
+        Stage stage;
+        stage = (Stage) backbutton.getScene().getWindow();
+        Scene scene;
+        scene = new Scene(FXMLLoader.load(getClass().getResource("earn.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
-    private void hamburgerIsPressed(MouseEvent event) {
+    private void logoIsPressed(MouseEvent event) throws IOException {
+        Stage stage;
+        stage = (Stage) logo.getScene().getWindow();
+        Scene scene;
+        scene = new Scene(FXMLLoader.load(getClass().getResource("home1.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    
+    @FXML
+    private void covidIsPressed(MouseEvent event) throws IOException {
+
+    }
+
+    @FXML
+    private void hamburgerIsPressed(MouseEvent event) throws IOException{
         try {
             VBox vbox = FXMLLoader.load(getClass().getResource("hamburger.fxml"));
             hamburgerdrawer.setSidePane(vbox);
