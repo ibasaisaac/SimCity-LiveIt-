@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import java.net.URL?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-color: #101745;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.hotelformController">
+   <stylesheets>
+      <URL value="@city.css" />
+   </stylesheets>
+   <children>
+      <ImageView fx:id="homebg" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" visible="false">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <image>
+            <Image url="@../../resources/buriganga.jpg" />
+         </image>
+      </ImageView>
+      <JFXDrawer fx:id="accomodationdrawer" defaultDrawerSize="400.0" direction="TOP" layoutX="34.0" layoutY="215.0" overLayVisible="false" prefHeight="50.0" prefWidth="184.0" />
+      <TabPane fx:id="tabpane" layoutY="215.0" prefHeight="504.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" stylesheets="@city.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="basicTab" text="Basic Info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="-10.0" prefHeight="523.0" prefWidth="1280.0">
+                           <content>
+                              <AnchorPane accessibleRole="SCROLL_PANE" minHeight="0.0" minWidth="0.0" prefHeight="1544.0" prefWidth="1286.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Label layoutX="86.0" layoutY="34.0" text="What is your role?">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rolefield" layoutX="86.0" layoutY="76.0" prefHeight="38.0" prefWidth="485.0" promptText="Enter your role" />
+                                    <Label layoutX="36.0" layoutY="140.0" text="How can we find this place?">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="192.0" text="Official Name">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="namefield" layoutX="86.0" layoutY="234.0" prefHeight="38.0" prefWidth="485.0" promptText="Enter Place Name" />
+                                    <Label layoutX="86.0" layoutY="300.0" text="Star Rating">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ratingfield" layoutX="86.0" layoutY="342.0" prefHeight="38.0" prefWidth="485.0" promptText="Mention the star rating of the hotel" />
+                                    <Label layoutX="86.0" layoutY="408.0" text="City/Region">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cityfield" layoutX="86.0" layoutY="451.0" onMouseEntered="#loadcitiesforautocomplete" prefHeight="38.0" prefWidth="485.0" promptText="Type the city/ town" />
+                                    <Label layoutX="86.0" layoutY="517.0" text="Street Address">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="streetfield" layoutX="86.0" layoutY="559.0" prefHeight="38.0" prefWidth="485.0" promptText="Enter street address" />
+                                    <Label layoutX="36.0" layoutY="629.0" text="Contact Information">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="681.0" text="Telephone">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="phonefield" layoutX="86.0" layoutY="723.0" prefHeight="38.0" prefWidth="485.0" promptText="Enter telephone number" />
+                                    <Label layoutX="86.0" layoutY="789.0" text="Email">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="emailfield" layoutX="86.0" layoutY="831.0" prefHeight="38.0" prefWidth="485.0" promptText="Enter email numner" />
+                                    <Label layoutX="86.0" layoutY="897.0" text="Trade License Number">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tradefield" layoutX="86.0" layoutY="939.0" prefHeight="38.0" prefWidth="485.0" promptText="Enter hotel trade licence no." />
+                                    <Button fx:id="continueToLayoutButton" layoutX="86.0" layoutY="1411.0" mnemonicParsing="false" onAction="#continueToLayout" prefHeight="49.0" prefWidth="202.0" style="-fx-background-color: #101745;" text="Continue" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="86.0" layoutY="1029.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload Hotel Photo">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <StackPane layoutX="86.0" layoutY="1071.0" style="-fx-border-color: #101743;">
+                                       <children>
+                                          <ImageView fx:id="uploadedimage" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </StackPane>
+                                    <Button layoutX="514.0" layoutY="1187.0" onAction="#uploadImageIsPressed" prefHeight="40.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Upload" textFill="WHITE">
+                                       <font>
+                                          <Font name="Comfortaa SemiBold" size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="layoutTab" text="Layout &amp; Pricing">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1280.0">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="-10.0" prefHeight="523.0" prefWidth="1280.0">
+                           <content>
+                              <AnchorPane accessibleRole="SCROLL_PANE" minHeight="0.0" minWidth="0.0" prefHeight="669.0" prefWidth="1286.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Label layoutX="36.0" layoutY="34.0" text="Tell us about your room(s).">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="80.0" text="Room Type">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="188.0" text="Number of rooms of this type">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="roomnofield" layoutX="86.0" layoutY="230.0" prefHeight="45.0" prefWidth="88.0" promptText="Enter digit" />
+                                    <Label layoutX="86.0" layoutY="296.0" text="Number of Guests">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="guestnofield" layoutX="86.0" layoutY="338.0" prefHeight="38.0" prefWidth="485.0" promptText="guest no. per room" />
+                                    <ComboBox fx:id="roomtypeCombo" layoutX="86.0" layoutY="122.0" prefHeight="42.0" prefWidth="523.0" promptText="Please select" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <Button layoutX="119.0" layoutY="900.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="202.0" style="-fx-background-color: #101745;" text="Add more rooms?" textFill="WHITE" visible="false">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="continueToFacilitiesButton" layoutX="86.0" layoutY="520.0" mnemonicParsing="false" onAction="#continueToFacilities" prefHeight="49.0" prefWidth="202.0" style="-fx-background-color: #101745;" text="Continue" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="86.0" layoutY="404.0" text="Price per night">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="roompricefield" layoutX="86.0" layoutY="446.0" prefHeight="38.0" prefWidth="485.0" promptText="BDT/night" />
+                                    <Label layoutX="86.0" layoutY="512.0" text="Add photo of the room" visible="false">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <StackPane layoutX="86.0" layoutY="554.0" style="-fx-border-color: #101743;" visible="false">
+                                       <children>
+                                          <ImageView fx:id="uploadedimage1" fitHeight="300.0" fitWidth="300.0" layoutX="86.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="facilitiesTab" text="Facilities">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="-10.0" prefHeight="523.0" prefWidth="1280.0">
+                           <content>
+                              <AnchorPane accessibleRole="SCROLL_PANE" minHeight="0.0" minWidth="0.0" prefHeight="821.0" prefWidth="1286.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <AnchorPane accessibleRole="SCROLL_PANE" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="1286.0" style="-fx-background-color: #ffffff;">
+                                       <children>
+                                          <Label layoutX="86.0" layoutY="34.0" text="Parking Available?">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="86.0" layoutY="150.0" text="Breakfast Available?">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="86.0" layoutY="258.0" text="Amenities that are popular">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="parkingCombo" layoutX="86.0" layoutY="76.0" prefHeight="42.0" prefWidth="523.0" promptText="Please select" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                          <Button fx:id="continueToPoliciesButton" layoutX="86.0" layoutY="680.0" mnemonicParsing="false" onAction="#continueToPolicies" prefHeight="49.0" prefWidth="202.0" style="-fx-background-color: #101745;" text="Continue" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <ComboBox fx:id="breakfastCombo" layoutX="86.0" layoutY="192.0" prefHeight="42.0" prefWidth="523.0" promptText="Please select" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                          <CheckBox fx:id="wifi" layoutX="86.0" layoutY="310.0" mnemonicParsing="false" text="Free WiFi">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="pool" layoutX="86.0" layoutY="360.0" mnemonicParsing="false" text="Swimming pool">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="ac" layoutX="86.0" layoutY="410.0" mnemonicParsing="false" text="Air conditioned">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="gym" layoutX="86.0" layoutY="460.0" mnemonicParsing="false" text="Gym">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="roomservice" layoutX="86.0" layoutY="510.0" mnemonicParsing="false" text="Room service">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="frontdesk" layoutX="86.0" layoutY="560.0" mnemonicParsing="false" text="24 hour front desk service">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="restaurant" layoutX="86.0" layoutY="610.0" mnemonicParsing="false" text="Restaurant">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </CheckBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="policiesTab" text="Policies">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="-10.0" prefHeight="523.0" prefWidth="1280.0">
+                           <content>
+                              <AnchorPane accessibleRole="SCROLL_PANE" minHeight="0.0" minWidth="0.0" prefHeight="738.0" prefWidth="1286.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Label layoutX="36.0" layoutY="34.0" text="Cancellations">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="90.0" text="How many days in advance can guests cancel free of charge?">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="198.0" text="or the guest will pay">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="advancecancelCombo" layoutX="86.0" layoutY="132.0" prefHeight="42.0" prefWidth="523.0" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <ComboBox fx:id="elsepayCombo" layoutX="86.0" layoutY="240.0" prefHeight="42.0" prefWidth="523.0" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <Label layoutX="36.0" layoutY="310.0" text="Check-in">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="inFrom" layoutX="86.0" layoutY="400.0" prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <Label layoutX="86.0" layoutY="369.0" text="from:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="480.0" text="to:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="inTo" layoutX="86.0" layoutY="512.0" prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <Label layoutX="407.0" layoutY="310.0" text="Check-out">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="outFrom" layoutX="457.0" layoutY="400.0" prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <Label layoutX="457.0" layoutY="369.0" text="from:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="457.0" layoutY="480.0" text="to:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="outTo" layoutX="457.0" layoutY="512.0" prefHeight="50.0" prefWidth="109.0" style="-fx-background-color: transparent; -fx-border-color: #d6d6d6;" />
+                                    <Button fx:id="continueToPaymentButton" layoutX="36.0" layoutY="600.0" mnemonicParsing="false" onAction="#continueToPayment" prefHeight="49.0" prefWidth="202.0" style="-fx-background-color: #101745;" text="Continue" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="paymentTab" text="Payment">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-size: 10;">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="-10.0" prefHeight="523.0" prefWidth="1280.0">
+                           <content>
+                              <AnchorPane accessibleRole="SCROLL_PANE" minHeight="0.0" minWidth="0.0" prefHeight="878.0" prefWidth="1286.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Label layoutX="86.0" layoutY="34.0" text="Which payment method you prefer?">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="238.0" text="Commission Payments">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="1053.0" layoutY="242.0" text="Commission percentage">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="1161.0" layoutY="266.0" prefHeight="64.0" prefWidth="77.0" text="10%" textFill="#3007ed">
+                                       <font>
+                                          <Font size="33.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="100.0" layoutY="280.0" text="We make a payment to you, minus the commission. Invoice is sent after every payment. ">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="86.0" layoutY="338.0" text="What name should be placed on the invoice?">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="invoicenamefield" layoutX="86.0" layoutY="380.0" prefHeight="38.0" prefWidth="485.0" promptText="e.g. legal/company name" />
+                                    <Label layoutX="86.0" layoutY="486.0" text="To complete registration, check the box below.">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="certify" layoutX="86.0" layoutY="500.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="1159.0" text="I certify that this is a legitimate accommodation business with all necessary licenses and permits, which can be shown upon first request. ">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <Button fx:id="completebutton" layoutX="400.0" layoutY="640.0" mnemonicParsing="false" onAction="#completeButtonIsPressed" prefHeight="75.0" prefWidth="510.0" style="-fx-background-color: #101745;" text="Complete and open for bookings!" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <RadioButton fx:id="cashradio" layoutX="100.0" layoutY="91.0" mnemonicParsing="false" text="Cash">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="tgpay" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="cardradio" layoutX="100.0" layoutY="127.0" mnemonicParsing="false" text="Credit/Debit Card" toggleGroup="$tgpay">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="mobilebankradio" layoutX="100.0" layoutY="163.0" mnemonicParsing="false" text="Mobile Banking" toggleGroup="$tgpay">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <Label fx:id="alerthotelform" layoutX="528.0" layoutY="727.0" prefHeight="75.0" prefWidth="574.0" textAlignment="JUSTIFY">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Group fx:id="logo" layoutX="30.0" layoutY="20.0" onMousePressed="#logoIsPressed">
+         <children>
+            <Label layoutX="50.0" text="SimCity LiveIt!" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Bold" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="46.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/fuy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <ImageView fx:id="backbutton" fitHeight="38.0" fitWidth="38.0" layoutY="169.0" onMousePressed="#backIsPressed" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/back.png" />
+         </image>
+      </ImageView>
+      <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" visible="false" />
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1210.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/hfh.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburgerbutton" layoutX="1214.0" layoutY="30.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+      <Label fx:id="covidbutton" layoutX="959.0" layoutY="40.0" text="Covid19" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="earnbutton" layoutX="1061.0" layoutY="41.0" onMousePressed="#earnIsPressed" text="Earn with Us" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

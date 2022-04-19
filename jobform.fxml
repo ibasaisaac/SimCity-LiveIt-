@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.jobformController">
+   <children>
+      <AnchorPane prefHeight="210.0" prefWidth="1280.0" style="-fx-background-color: #101743;">
+         <children>
+            <Group layoutX="20.0" layoutY="50.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="-17.0" prefHeight="46.0" text="Job Details" textFill="WHITE">
+                     <font>
+                        <Font name="Comfortaa Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="29.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/fuy.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="210.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ScrollPane prefHeight="510.0" prefWidth="1280.0">
+               <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1970.0" prefWidth="1265.0">
+                     <children>
+                        <Text layoutX="70.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="categoryfield" layoutX="70.0" layoutY="100.0" onMouseEntered="#loadcategoriesforautocomplete" prefHeight="55.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Provider">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="providerfield" layoutX="70.0" layoutY="215.0" prefHeight="55.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vacancy">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="70.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="positionfield" layoutX="70.0" layoutY="445.0" prefHeight="55.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <ChoiceBox fx:id="statuschoicebox" layoutX="70.0" layoutY="560.0" onMousePressed="#statuschoiceIsPressed" prefHeight="55.0" prefWidth="200.0" style="-fx-font: 20px &quot;Comfortaa&quot;;" />
+                        <Text layoutX="70.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Requirements">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="qualificationfield" layoutX="70.0" layoutY="675.0" prefHeight="100.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="820.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience Requirements">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="experiencefield" layoutX="70.0" layoutY="835.0" prefHeight="100.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="980.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Requirements">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="descriptionfield" layoutX="70.0" layoutY="995.0" prefHeight="150.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <CheckBox fx:id="workfromhomecheckbox" layoutX="220.0" layoutY="1165.0" mnemonicParsing="false" text="Work from home">
+                           <font>
+                              <Font name="Comfortaa Regular" size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <TextField fx:id="cityfield" layoutX="70.0" layoutY="1205.0" onMouseEntered="#loadcitiesforautocomplete" prefHeight="55.0" prefWidth="590.0" promptText="city" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="areafield" layoutX="70.0" layoutY="1275.0" onMouseEntered="#loadareasforautocomplete" prefHeight="55.0" prefWidth="590.0" promptText="area" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Salary">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="190.0" layoutY="1387.0" prefHeight="55.0" text="BDT">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="salaryfield" layoutX="70.0" layoutY="1390.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="emailfield" layoutX="70.0" layoutY="1505.0" prefHeight="55.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Deadline:">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <DatePicker fx:id="deadlinepicker" layoutX="70.0" layoutY="1620.0" prefHeight="55.0" prefWidth="200.0" style="-fx-font: 18px &quot;Comfortaa&quot;;" />
+                        <Text layoutX="70.0" layoutY="1775.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Commission Percentage: 5%">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="alertJobListing" layoutX="700.0" layoutY="1525.0" prefHeight="40.0" style="-fx-border-color: #101743; -fx-border-width: 1; -fx-border-radius: 0; -fx-background-color: #10174320;" textFill="#101743" visible="false">
+                           <font>
+                              <Font name="Comfortaa Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="1795.0" text="To complete registration, check the box below.">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="eulacheckbox" layoutX="70.0" layoutY="1835.0" mnemonicParsing="false" prefWidth="1159.0" text="I certify that this is a legitimate business with all necessary licenses and permits, which can be shown upon first request. ">
+                           <font>
+                              <Font name="Comfortaa Regular" size="15.0" />
+                           </font>
+                        </CheckBox>
+                        <Button layoutX="513.5" layoutY="1895.0" onMousePressed="#completeJobFormIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Complete and publish!" textFill="WHITE">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Spinner fx:id="vacancyspinner" editable="true" layoutX="70.0" layoutY="330.0" prefHeight="55.0" prefWidth="100.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" disable="true" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" />
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1220.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/hfh.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburgerbutton" layoutX="1224.0" layoutY="40.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+      <Label fx:id="earnbutton" layoutX="1071.0" layoutY="51.0" onMousePressed="#earnIsPressed" style="-fx-text-fill: #ffffff80;" text="Earn with Us" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="covidbutton" layoutX="969.0" layoutY="50.0" onMousePressed="#covidIsPressed" text="Covid19" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

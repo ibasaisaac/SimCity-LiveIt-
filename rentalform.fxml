@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.rentalformController">
+   <children>
+      <AnchorPane prefHeight="210.0" prefWidth="1280.0" style="-fx-background-color: #101743;">
+         <children>
+            <Group layoutX="20.0" layoutY="50.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="-17.0" prefHeight="46.0" text="Tell us about your property" textFill="WHITE">
+                     <font>
+                        <Font name="Comfortaa Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="29.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/fuy.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="rentalformtabpane" layoutY="180.0" prefHeight="540.0" prefWidth="1280.0" stylesheets="@city.css" tabMaxHeight="40.0" tabMaxWidth="213.33" tabMinHeight="40.0" tabMinWidth="198.0">
+         <tabs>
+            <Tab fx:id="locationtab" closable="false">
+               <content>
+                  <ScrollPane prefHeight="510.0" prefWidth="1280.0">
+                    <content>
+                      <AnchorPane layoutY="150.0" minHeight="0.0" minWidth="0.0" prefWidth="1265.0">
+                           <children>
+                              <Text layoutX="70.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Where's your property located?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="cityfield" layoutX="70.0" layoutY="90.0" onMouseEntered="#loadcitiesforautocomplete" prefHeight="55.0" prefWidth="590.0" promptText="city" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;" stylesheets="@city.css">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="auto-complete-popup" />
+                                    <String fx:value="list-view" />
+                                 </styleClass>
+                              </TextField>
+                              <TextField fx:id="areafield" layoutX="70.0" layoutY="155.0" onMouseEntered="#loadareasforautocomplete" prefHeight="55.0" prefWidth="590.0" promptText="area" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;" stylesheets="@city.css">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="streetfield" layoutX="70.0" layoutY="225.0" prefHeight="90.0" prefWidth="590.0" promptText="street" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pin point your property location in the map.">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <WebView fx:id="mapview" layoutX="70.0" layoutY="420.0" prefHeight="500.0" prefWidth="500.0" />
+                              <Button layoutX="585.0" layoutY="990.0" onMousePressed="#continueToInfoIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Continue" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </content>
+               <graphic>
+                  <Label text="Location" textFill="#101746">
+                     <font>
+                        <Font name="Comfortaa Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Tab>
+            <Tab fx:id="infotab" closable="false">
+              <content>
+                  <ScrollPane>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1265.0">
+                           <children>
+                              <Text layoutX="70.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What's the name of your property?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="propertynamefield" layoutX="70.0" layoutY="85.0" prefHeight="55.0" prefWidth="590.0" promptText="name" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anything you might want to add about your property.">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="descriptionfield" layoutX="70.0" layoutY="205.0" prefHeight="100.0" prefWidth="590.0" promptText="description" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provide legal document number.">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="tiinfield" layoutX="70.0" layoutY="370.0" prefHeight="55.0" prefWidth="590.0" promptText="TIIN" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How will the guest contact you?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="hostnamefield" layoutX="70.0" layoutY="510.0" prefHeight="55.0" prefWidth="590.0" promptText="host name" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="phonefield" layoutX="70.0" layoutY="580.0" prefHeight="55.0" prefWidth="590.0" promptText="phone" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="emailfield" layoutX="70.0" layoutY="650.0" prefHeight="55.0" prefWidth="590.0" promptText="email" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="585.0" layoutY="775.0" onMousePressed="#continueToLayoutIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Continue" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+              </content>
+               <graphic>
+                  <Label text="Basic Info" textFill="#101746">
+                     <font>
+                        <Font name="Comfortaa Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Tab>
+            <Tab fx:id="layouttab" closable="false">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1265.0">
+                           <children>
+                              <Text layoutX="72.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What type of room is this?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <MenuButton fx:id="roomtypefield" layoutX="70.0" layoutY="85.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="590.0" style="-fx-background-radius: 0; -fx-background-color: #ffffff; -fx-border-color: #101743;">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#singleIsChosen">
+                                       <graphic>
+                                          <Label prefHeight="50.0" prefWidth="568.0" text="Single">
+                                             <font>
+                                                <Font name="Comfortaa Regular" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#doubleIsChosen">
+                                       <graphic>
+                                          <Label prefHeight="50.0" prefWidth="568.0" text="Double">
+                                             <font>
+                                                <Font name="Comfortaa Regular" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#twinIsChosen">
+                                       <graphic>
+                                          <Label prefHeight="50.0" prefWidth="568.0" text="Twin">
+                                             <font>
+                                                <Font name="Comfortaa Regular" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </MenuItem>
+                                 </items>
+                                 <font>
+                                    <Font name="Comfortaa Regular" size="18.0" />
+                                 </font>
+                              </MenuButton>
+                              <Text layoutX="70.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of beds">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="bedfield" layoutX="70.0" layoutY="205.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of baths">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="bathfield" layoutX="70.0" layoutY="325.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How many guests can stay in this room?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="occupancyfield" layoutX="70.0" layoutY="445.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base price per night">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="180.0" layoutY="565.0" prefHeight="55.0" text="BDT">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="pricefield" layoutX="70.0" layoutY="565.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="585.0" layoutY="690.0" onMouseReleased="#continueToFacilitiesIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Continue" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+               <graphic>
+                  <Label text="Layout &amp; Pricing" textFill="#101746">
+                     <font>
+                        <Font name="Comfortaa Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Tab>
+            <Tab fx:id="facilitytab" closable="false">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1265.0">
+                           <children>
+                              <Text layoutX="70.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Is breakfast available?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <JFXRadioButton layoutX="70.0" layoutY="85.0" text="No">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="BreakfastRadio" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="70.0" layoutY="120.0" text="Yes, optional" toggleGroup="$BreakfastRadio">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="70.0" layoutY="155.0" text="Yes, included in price" toggleGroup="$BreakfastRadio">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <Text layoutX="70.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Is parking available?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <JFXRadioButton layoutX="70.0" layoutY="240.0" text="No">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="ParkingRadio" />
+                                 </toggleGroup>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="70.0" layoutY="275.0" text="Yes, paid" toggleGroup="$ParkingRadio">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="70.0" layoutY="310.0" text="Yes, free" toggleGroup="$ParkingRadio">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <Text layoutX="70.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What languages do you or your staff speak?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <JFXCheckBox fx:id="bangla" checkedColor="#101743" layoutX="70.0" layoutY="395.0" text="Bangla">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="english" checkedColor="#101743" layoutX="70.0" layoutY="430.0" text="English">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                              </JFXCheckBox>
+                              <Text layoutX="70.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other facilities that are available">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <JFXCheckBox fx:id="wifi" checkedColor="#101743" layoutX="70.0" layoutY="515.0" text="Free WiFi">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="ac" checkedColor="#101743" layoutX="70.0" layoutY="550.0" text="Air Conditioning">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                              </JFXCheckBox>
+                              <Button layoutX="585.0" layoutY="646.0" onMousePressed="#continueToPhotosIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Continue" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+               <graphic>
+                  <Label text="Facilities" textFill="#101746">
+                     <font>
+                        <Font name="Comfortaa Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Tab>
+            <Tab fx:id="phototab" closable="false">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1265.0">
+                           <children>
+                              <Text layoutX="70.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload at least 1 photo">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <StackPane layoutX="70.0" layoutY="100.0" style="-fx-border-color: #101743;">
+                                 <children>
+                                    <ImageView fx:id="uploadedimage" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </StackPane>
+                              <Button layoutX="430.0" layoutY="205.0" onAction="#uploadImageIsPressed" prefHeight="40.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Upload" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="571.0" layoutY="428.0" onMousePressed="#continueToPaymentIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Continue" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="398.0" layoutY="263.0" onMousePressed="#anotherPhotoUpload" prefHeight="40.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="+ Add another" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+               <graphic>
+                  <Label text="Photos" textFill="#101746">
+                     <font>
+                        <Font name="Comfortaa Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Tab>
+            <Tab fx:id="paymenttab" closable="false">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="540.0" prefWidth="1265.0">
+                           <children>
+                              <Text layoutX="70.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What payment method do you prefer?">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <JFXRadioButton layoutX="70.0" layoutY="85.0" text="Cash">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="70.0" layoutY="120.0" text="Credit/Debit Card">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <JFXRadioButton layoutX="70.0" layoutY="155.0" text="Mobile Banking">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="20.0" />
+                                 </font>
+                                 <selectedColor>
+                                    <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+                                 </selectedColor>
+                              </JFXRadioButton>
+                              <Text layoutX="70.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What name should be placed on the invoice?*">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <TextField layoutX="70.0" layoutY="240.0" prefHeight="55.0" prefWidth="590.0" promptText="name" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                                 <font>
+                                    <Font name="Comfortaa Light" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="70.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Commission Percentage: 10%">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="alertRentalListing" layoutX="700.0" layoutY="100.0" prefHeight="40.0" style="-fx-border-color: #101743; -fx-border-width: 1; -fx-border-radius: 0; -fx-background-color: #10174320;" textFill="#101743" visible="false">
+                                 <font>
+                                    <Font name="Comfortaa Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="70.0" layoutY="370.0" text="To complete registration, check the box below.">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="eulacheckbox" layoutX="70.0" layoutY="410.0" mnemonicParsing="false" prefWidth="1159.0" text="I certify that this is a legitimate accommodation business with all necessary licenses and permits, which can be shown upon first request. ">
+                                 <font>
+                                    <Font name="Comfortaa Regular" size="15.0" />
+                                 </font>
+                              </CheckBox>
+                              <Button layoutX="469.5" layoutY="470.0" onMousePressed="#completeRentalFormIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Complete and open for bookings!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Comfortaa SemiBold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+               <graphic>
+                  <Label text="Payment" textFill="#101746">
+                     <font>
+                        <Font name="Comfortaa Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" disable="true" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" />
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1220.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/hfh.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburgerbutton" layoutX="1224.0" layoutY="40.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+      <Label fx:id="earnbutton" layoutX="1071.0" layoutY="51.0" onMousePressed="#earnIsPressed" style="-fx-text-fill: #ffffff80;" text="Earn with Us" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="covidbutton" layoutX="969.0" layoutY="50.0" onMousePressed="#covidIsPressed" text="Covid19" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

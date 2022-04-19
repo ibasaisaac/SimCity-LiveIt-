@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.reserveController">
+   <children>
+      <AnchorPane prefHeight="210.0" prefWidth="1280.0" style="-fx-background-color: #101743;">
+         <children>
+            <Group layoutX="20.0" layoutY="50.0" />
+            <ImageView fx:id="backbutton" fitHeight="38.0" fitWidth="38.0" layoutX="36.0" layoutY="150.0" onMousePressed="#backIsPressed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/back.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="87.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete your details">
+               <font>
+                  <Font name="Comfortaa Medium" size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="filterbutton" layoutX="1150.0" layoutY="152.0" text="Filter" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa SemiBold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Group fx:id="logo" layoutX="30.0" layoutY="20.0" onMousePressed="#logoIsPressed">
+         <children>
+            <Label layoutX="50.0" text="SimCity LiveIt!" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Bold" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="46.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/fuy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" disable="true" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" />
+    <AnchorPane layoutY="210.0" minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="1265.0">
+         <children>
+            <Text layoutX="50.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="firstnamefield" layoutX="50.0" layoutY="80.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #101746 transparent; -fx-text-fill: #101746;">
+               <font>
+                  <Font name="Comfortaa Light" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="300.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="lastnamefield" layoutX="300.0" layoutY="80.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #101746 transparent; -fx-text-fill: #101746;">
+               <font>
+                  <Font name="Comfortaa Light" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="50.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="emailfield" layoutX="50.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #101746 transparent; -fx-text-fill: #101746;">
+               <font>
+                  <Font name="Comfortaa Light" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="50.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="countryfield" layoutX="50.0" layoutY="270.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #101746 transparent; -fx-text-fill: #101746;">
+               <font>
+                  <Font name="Comfortaa Light" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="300.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="phonefield" layoutX="300.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #101746 transparent; -fx-text-fill: #101746;">
+               <font>
+                  <Font name="Comfortaa Light" size="14.0" />
+               </font>
+            </TextField>
+            <JFXRadioButton layoutX="300.0" layoutY="249.0" text="I am booking for myself">
+               <font>
+                  <Font name="Comfortaa Medium" size="14.0" />
+               </font>
+               <selectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.27450981736183167" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+               </unSelectedColor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="bookingtoggle" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="300.0" layoutY="274.0" text="I am booking for someone else" toggleGroup="$bookingtoggle">
+               <font>
+                  <Font name="Comfortaa Medium" size="14.0" />
+               </font>
+               <selectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.27450981736183167" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+               </unSelectedColor>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="60.0" layoutY="390.0" text="Pay now ">
+               <font>
+                  <Font name="Comfortaa Medium" size="18.0" />
+               </font>
+               <selectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.27450981736183167" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+               </unSelectedColor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="paymenttoggle" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="200.0" layoutY="390.0" text="Pay later" toggleGroup="$paymenttoggle">
+               <font>
+                  <Font name="Comfortaa Medium" size="18.0" />
+               </font>
+               <selectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.27450981736183167" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.062745101749897" green="0.09019608050584793" blue="0.26274511218070984" />
+               </unSelectedColor>
+            </JFXRadioButton>
+            <Button fx:id="bookingbutton" layoutX="337.0" layoutY="455.0" onMousePressed="#completeBookingIsPressed" prefHeight="40.0" style="-fx-background-color: #384073; -fx-background-radius: 0; -fx-border-style: none;" text="Complete Booking" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa SemiBold" size="18.0" />
+               </font>
+            </Button>
+            <Text layoutX="50.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check In:">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="checkinpicker" layoutX="142.0" layoutY="326.0" prefWidth="150.0" style="-fx-font: 14px &quot;Comfortaa&quot;;" />
+            <Text layoutX="326.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Out:">
+               <font>
+                  <Font name="Comfortaa Regular" size="18.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="checkoutpicker" layoutX="437.0" layoutY="326.0" prefWidth="150.0" style="-fx-font: 14px &quot;Comfortaa&quot;;" />
+            <Label fx:id="alertReservation" layoutX="800.0" layoutY="100.0" prefHeight="40.0" style="-fx-border-color: #101743; -fx-border-width: 1; -fx-border-radius: 0; -fx-background-color: #10174320;" textFill="#101743" visible="false">
+               <font>
+                  <Font name="Comfortaa Medium" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1210.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/hfh.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburgerbutton" layoutX="1214.0" layoutY="30.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+      <Label fx:id="covidbutton" layoutX="1108.0" layoutY="40.0" onMousePressed="#covidIsPressed" text="Covid19" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

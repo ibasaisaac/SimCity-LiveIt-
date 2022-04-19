@@ -1,0 +1,106 @@
+.mainFxmlClass {
+}
+
+.root{
+    /*    -fx-background-image: url("https://pbs.twimg.com/media/C0OLDZMVQAAEF5h?format=jpg&name=large");
+        -fx-background-position: center center;
+        -fx-background-size: cover;
+    
+        -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+        -fx-text-fill: #8d3434;
+        -fx-font-family: "Consolas";
+        -fx-font-size: 13px;
+        -fx-background-color: #ffffff;
+        -fx-border-color: #8d3434;
+        -fx-pref-width: 42px;
+        -fx-pref-height: 27px;*/
+}
+.tab-header-background {
+    -fx-background-color: #101746;
+}
+
+.tab:selected
+{
+    -fx-background-color: white;
+    -fx-border-width: 0 0 4px 0;
+    -fx-border-color:  #101743;
+    -fx-border-style: solid;
+}
+
+.auto-complete-popup > .list-view {
+    -fx-background-color:
+        linear-gradient(to bottom,
+        derive(-fx-color,-17%),
+        derive(-fx-color,-30%)
+        ),
+        -fx-control-inner;
+    -fx-background-insets: -1 -2 -1 -1, 0 -1 0 0;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+}
+
+
+
+/*
+.tab-header-background {
+    -fx-background-color: white;
+}
+
+.tab
+{
+    -fx-background-color:  transparent;
+    -fx-padding: 0 -1 -1 -1 -1;
+}
+.tab:selected
+{
+    -fx-background-color:  #E6E6E6;
+    -fx-border-width: 5 0 0 0 0;
+    -fx-border-color: #3F6DF3;
+}
+
+.tab-pane {
+    -fx-tab-min-width:253px;
+    -fx-tab-max-width:120px;
+    -fx-tab-min-height:50px;
+    -fx-tab-max-height:50px;
+}
+.tab
+{
+    -fx-font-size: 15;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+.table-view{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: #101746;
+    -fx-text-fill: white;
+    -fx-font: 14px "Comfortaa";
+}
+
+.table-view .table-cell{
+    -fx-text-fill: black;
+    -fx-font: 18px "Comfortaa";
+}
+.table-row-cell{
+    -fx-background-color: #00000000;
+    -fx-cell-size: 70;
+}
+.table-row-cell:selected {
+    -fx-border-color: #101746;
+    -fx-table-cell-border-color: transparent;
+}

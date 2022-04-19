@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.libraryController">
+   <children>
+      <AnchorPane prefHeight="210.0" prefWidth="1280.0" style="-fx-background-color: #101743;">
+         <children>
+            <Group layoutX="20.0" layoutY="50.0" />
+            <ImageView fx:id="backbutton" fitHeight="38.0" fitWidth="38.0" layoutX="36.0" layoutY="150.0" onMousePressed="#backIsPressed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/back.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="earnbutton1" layoutX="1150.0" layoutY="152.0" onMousePressed="#earnIsPressed" text="Filter" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa SemiBold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Group fx:id="logo" layoutX="30.0" layoutY="20.0" onMousePressed="#logoIsPressed">
+         <children>
+            <Label layoutX="50.0" text="SimCity LiveIt!" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Bold" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="46.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/fuy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" disable="true" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" />
+    <AnchorPane layoutY="210.0" minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="1265.0">
+         <children>
+            <AnchorPane prefHeight="510.0" prefWidth="700.0">
+               <children>
+                  <TableView fx:id="table" prefHeight="510.0" prefWidth="700.0" stylesheets="@city.css">
+                    <columns>
+                      <TableColumn fx:id="colName" editable="false" maxWidth="300.0" prefWidth="300.0" resizable="false" sortable="false" text="name" />
+                      <TableColumn fx:id="colArea" editable="false" prefWidth="180.0" resizable="false" sortable="false" text="area" />
+                        <TableColumn fx:id="colHours" editable="false" prefWidth="200.0" resizable="false" sortable="false" text="hours" />
+                    </columns>
+                     <styleClass>
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="table-view" />
+                        <String fx:value="decrement-button" />
+                        <String fx:value="increment-button" />
+                        <String fx:value="show-hide-columns-button" />
+                        <String fx:value="track" />
+                        <String fx:value="track-background" />
+                        <String fx:value="virtual-flow" />
+                     </styleClass>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <VBox fx:id="detailsbox" layoutX="765.0" prefHeight="510.0" prefWidth="500.0" spacing="5.0">
+               <children>
+                  <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Comfortaa SemiBold" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="location" fill="#000000b2" strokeType="OUTSIDE" strokeWidth="0.0" text="location">
+                     <font>
+                        <Font name="Comfortaa Light" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="10.0" top="3.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="hours" fill="#00000080" strokeType="OUTSIDE" strokeWidth="0.0" text="hours">
+                     <font>
+                        <Font name="Comfortaa Medium" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="10.0" top="3.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="phone" fill="#00000080" strokeType="OUTSIDE" strokeWidth="0.0" text="phone">
+                     <font>
+                        <Font name="Comfortaa Medium" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="10.0" top="3.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets top="150.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1210.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/hfh.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburgerbutton" layoutX="1214.0" layoutY="30.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+      <Label fx:id="earnbutton" layoutX="1061.0" layoutY="40.0" onMousePressed="#earnIsPressed" text="Earn with Us" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="covidbutton" layoutX="959.0" layoutY="40.0" onMousePressed="#covidIsPressed" text="Covid19" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

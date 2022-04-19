@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.flatformController">
+   <children>
+      <AnchorPane prefHeight="210.0" prefWidth="1280.0" style="-fx-background-color: #101743;">
+         <children>
+            <Group layoutX="20.0" layoutY="50.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="-17.0" prefHeight="46.0" text="Tell us about your property" textFill="WHITE">
+                     <font>
+                        <Font name="Comfortaa Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="29.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/fuy.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="210.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ScrollPane prefHeight="510.0" prefWidth="1280.0">
+               <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2180.0" prefWidth="1265.0">
+                     <children>
+                        <Text layoutX="70.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Where's your property located?">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="cityfield" layoutX="70.0" layoutY="90.0" onMouseEntered="#loadcitiesforautocomplete" prefHeight="55.0" prefWidth="590.0" promptText="city" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="areafield" layoutX="70.0" layoutY="155.0" onMouseEntered="#loadareasforautocomplete" prefHeight="55.0" prefWidth="590.0" promptText="area" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="streetfield" layoutX="70.0" layoutY="225.0" prefHeight="90.0" prefWidth="590.0" promptText="street" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pin point your property location in the map.">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <WebView fx:id="mapview" layoutX="70.0" layoutY="420.0" prefHeight="500.0" prefWidth="500.0" />
+                        <Text layoutX="70.0" layoutY="990.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What's the name of your property?">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="propertynamefield" layoutX="70.0" layoutY="1005.0" prefHeight="55.0" prefWidth="590.0" promptText="name" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anything you might want to add about your property.">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="descriptionfield" layoutX="70.0" layoutY="1125.0" prefHeight="100.0" prefWidth="590.0" promptText="description" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provide legal document number.">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="tiinfield" layoutX="70.0" layoutY="1290.0" prefHeight="55.0" prefWidth="590.0" promptText="TIIN" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How will the tenant contact you?">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="landlordnamefield" layoutX="70.0" layoutY="1430.0" prefHeight="55.0" prefWidth="590.0" promptText="name" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="phonefield" layoutX="70.0" layoutY="1495.0" prefHeight="55.0" prefWidth="590.0" promptText="phone" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of beds">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="bedfield" layoutX="70.0" layoutY="1635.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1740.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of baths">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="bathfield" layoutX="70.0" layoutY="1755.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="1860.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rent per month">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="190.0" layoutY="1875.0" prefHeight="55.0" text="BDT">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="rentfield" layoutX="70.0" layoutY="1875.0" prefHeight="55.0" prefWidth="100.0" style="-fx-background-radius: 0; -fx-border-color: #101743; -fx-border-style: none;">
+                           <font>
+                              <Font name="Comfortaa Light" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="70.0" layoutY="2000.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Commission Percentage: 10%">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="alertFlatListing" layoutX="700.0" layoutY="1750.0" prefHeight="40.0" style="-fx-border-color: #101743; -fx-border-width: 1; -fx-border-radius: 0; -fx-background-color: #10174320;" textFill="#101743" visible="false">
+                           <font>
+                              <Font name="Comfortaa Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="2020.0" text="To complete registration, check the box below.">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="23.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="eulacheckbox" layoutX="70.0" layoutY="2060.0" mnemonicParsing="false" prefWidth="1159.0" text="I certify that this is a legitimate accommodation business with all necessary licenses and permits, which can be shown upon first request. ">
+                           <font>
+                              <Font name="Comfortaa Regular" size="15.0" />
+                           </font>
+                        </CheckBox>
+                        <Button layoutX="575.0" layoutY="2120.0" onMousePressed="#completeFlatFormIsPressed" prefHeight="55.0" style="-fx-background-color: #101743; -fx-background-radius: 0; -fx-border-style: none;" text="Complete and publish!" textFill="WHITE">
+                           <font>
+                              <Font name="Comfortaa SemiBold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" disable="true" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" />
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1220.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/hfh.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="hamburgerbutton" layoutX="1224.0" layoutY="40.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+      <Label fx:id="earnbutton" layoutX="1071.0" layoutY="51.0" onMousePressed="#earnIsPressed" style="-fx-text-fill: #ffffff80;" text="Earn with Us" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="covidbutton" layoutX="969.0" layoutY="50.0" onMousePressed="#covidIsPressed" text="Covid19" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

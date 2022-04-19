@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import java.net.URL?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@city.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newpackage.home1Controller">
+    <stylesheets>
+        <URL value="@city.css" />
+    </stylesheets>
+    <children>
+        <ImageView fx:id="homebg" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../resources/buriganga.jpg" />
+            </image>
+            <viewport>
+                <Rectangle2D />
+            </viewport>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000a1" height="720.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+        <JFXDrawer fx:id="accomodationdrawer" defaultDrawerSize="400.0" direction="TOP" layoutX="34.0" layoutY="215.0" overLayVisible="false" prefHeight="50.0" prefWidth="184.0" />
+        <Label fx:id="accomodationbutton" layoutX="35.0" layoutY="170.0" onMousePressed="#accomodationIsPressed" text="Accommodation" textFill="WHITE">
+            <font>
+                <Font name="Comfortaa Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="jobbutton" layoutX="281.0" layoutY="170.0" onMousePressed="#jobIsPressed" text="Job Offers" textFill="WHITE">
+            <font>
+                <Font name="Comfortaa Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="librarybutton" layoutX="456.0" layoutY="170.0" onMousePressed="#libraryIsPressed" text="Library" textFill="WHITE">
+            <font>
+                <Font name="Comfortaa Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="thingsbutton" layoutX="588.0" layoutY="170.0" onMousePressed="#thingsIsPressed" text="Things To Do" textFill="WHITE">
+            <font>
+                <Font name="Comfortaa Bold" size="24.0" />
+            </font>
+        </Label>
+        <Group fx:id="logo" layoutX="30.0" layoutY="20.0" onMousePressed="#logoIsPressed">
+            <children>
+                <Label layoutX="50.0" text="SimCity LiveIt!" textFill="WHITE">
+                    <font>
+                        <Font name="Comfortaa Bold" size="48.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="48.0" fitWidth="46.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/fuy.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Group>
+        <JFXDrawer fx:id="hamburgerdrawer" defaultDrawerSize="400.0" direction="RIGHT" layoutX="905.0" overLayVisible="false" prefHeight="720.0" prefWidth="375.0" />
+        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1210.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/hfh.png" />
+            </image>
+        </ImageView>
+        <JFXHamburger fx:id="hamburgerbutton" layoutX="1214.0" layoutY="30.0" maxWidth="38.0" onMousePressed="#hamburgerIsPressed" opacity="0.0" prefHeight="38.0" />
+        <Label fx:id="earnbutton" layoutX="1061.0" layoutY="40.0" onMousePressed="#earnIsPressed" text="Earn with Us" textFill="WHITE">
+            <font>
+                <Font name="Comfortaa Regular" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="covidbutton" layoutX="959.0" layoutY="40.0" onMousePressed="#covidIsPressed" text="Covid19" textFill="WHITE">
+            <font>
+                <Font name="Comfortaa Regular" size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
